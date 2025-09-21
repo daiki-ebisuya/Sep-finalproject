@@ -1,0 +1,99 @@
+.intro {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+main {
+    background-image: linear-gradient(45deg, #FFD700, #FFA500);
+}
+
+@media (max-width: 767px) {
+
+    .mobilemenu {
+        display: block;
+        width: 100%;
+
+    }
+
+    h1 {
+        background-color: #FFD700;
+        /* 黄色背景 */
+        color: #fff;
+        /* 文字色は白 */
+        font-family: 'Poppins', sans-serif;
+        /* おしゃれなフォント */
+        font-size: 3rem;
+        /* 大きめの文字 */
+        font-weight: 700;
+        /* 太字 */
+        text-transform: uppercase;
+        /* 大文字に */
+        letter-spacing: 2px;
+        /* 文字間を広めに */
+        padding: 20px 40px;
+        /* 内側余白 */
+        display: inline-block;
+        /* 背景を文字サイズに合わせる */
+        border-radius: 10px;
+        /* 角丸 */
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        /* 立体感 */
+        background-image: linear-gradient(45deg, #FFD700, #FFA500);
+        /* ちょっとグラデーション */
+    }
+
+    h2 {
+        font-family: 'Kaushan Script', cursive;
+        /* 筆文字風フォント */
+        font-size: 3rem;
+        /* 大きめ文字 */
+        font-weight: 900;
+        /* 太め */
+        color: white;
+        /* ベースは赤 */
+
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        background-color: #FFD700;
+        /* 黄色背景 */
+        color: #fff;
+        /* 文字色は白 */
+        font-family: 'Poppins', sans-serif;
+        /* おしゃれなフォント */
+        font-size: 7rem;
+        /* 大きめの文字 */
+        font-weight: 700;
+        /* 太字 */
+        text-transform: uppercase;
+        /* 大文字に */
+        letter-spacing: 2px;
+        /* 文字間を広めに */
+        padding: 20px 40px;
+        /* 内側余白 */
+        display: inline-block;
+        /* 背景を文字サイズに合わせる */
+        border-radius: 10px;
+        /* 角丸 */
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        /* 立体感 */
+        background-image: linear-gradient(45deg, #FFD700, #FFA500);
+        /* ちょっとグラデーション */
+    }
+
+    h2 {
+        font-family: 'Kaushan Script', cursive;
+        /* 筆文字風フォント */
+        font-size: 7rem;
+        /* 大きめ文字 */
+        font-weight: 900;
+        /* 太め */
+        color: white;
+        /* ベースは赤 */
+
+    }
+}
