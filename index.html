@@ -15,7 +15,7 @@
         };
     </script>
     <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                 <div class="hidden items-center lg:pl-[15rem]  lg:flex lg:w-auto lg:order-1 " id="mobileMenu">
                     <ul class="flex flex-row font-medium  lg:ml-[30rem] lg:mt-[-30px] lg:flex-row lg:space-x-8">
                         <li>
-                            <a href="#"
+                            <a href="#intro"
                                 class="block py-2 pr-4 pl-3 text-blue-700 rounded lg:bg-transparent lg:text-blue-700 lg:p-0">Home</a>
                         </li>
                         <li>
@@ -56,16 +56,118 @@
                         </svg>
                     </button>
                 </div>
-
+            </div>
+        </nav>
 
     </header>
     <main>
         <section class="intro">
-            <h1>Special Travel Campain in September</h1>
-            <img class="w-[50%] border-gray-200 border-[10px] rounded-[50px]" src="./img/IMG_0287.jpg" alt="">
-            <div><h2>VS</h2></div>
-            <img class="w-[50%]" src="./img/IMG_8142.jpg" alt="">
+            <div class="heading">
+                <h1>Special Travel Campaign</h1>
+                <h2 class="text-[10rem]">in J<a>a</a>pan</h2>
+            </div>
+
         </section>
+        <div class="description">
+            <h3 class="text-[2rem] text-center">Enjoy your trip with us!</h3>
+            <article>Japan offers unique charms in every region.
+                Experience the vibrant food culture and humor of Osaka, the perfect blend of tradition and
+                cutting-edge trends in Tokyo, and the breathtaking beaches and rich nature of Okinawa.
+                Each destination offers unforgettable experiences you can only find there.</article>
+            <span class="p-2"></span>
+            <h4>.....Where will your next journey begin?.....</h4>
+
+        </div>
+        <section class="details">
+            <button id="btn-osaka" class="slide-button">
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="text">大阪</span>
+            </button>
+
+            <button id="btn-tokyo" class="slide-button">
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="text">東京</span>
+            </button>
+
+            <button id="btn-okinawa" class="slide-button">
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="text">沖縄</span>
+            </button>
+        </section>
+        <script>
+            const images = {
+                osaka: [
+                    'img/IMG_9260.JPG',
+                    'img/IMG_9276.JPG',
+                    'img/IMG_9287.JPG'
+                ],
+                tokyo: [
+                    'img/IMG_9260.JPG',
+                    'img/IMG_9276.JPG',
+                    'img/IMG_9287.JPG'
+                ],
+                okinawa: [
+                    'img/IMG_9260.JPG',
+                    'img/IMG_9276.JPG',
+                    'img/IMG_9287.JPG'
+                ]
+            };
+
+            const urls = {
+                osaka: 'file:///Users/ebisuyadaiki/Desktop/Sep%20final/Sep-finalproject/osaka.html',
+                tokyo: 'file:///Users/ebisuyadaiki/Desktop/Sep%20final/Sep-finalproject/tokyo.html',
+                okinawa: 'file:///Users/ebisuyadaiki/Desktop/Sep%20final/Sep-finalproject/okinawa.html'
+            };
+
+            function setupSlideShow(buttonId, imgList, link) {
+                const button = document.getElementById(buttonId);
+                const slides = button.querySelectorAll('span.bg-slide');
+                let currentIndex = 0;
+                let nextIndex = 1;
+
+                slides.forEach((slide, i) => {
+                    slide.style.backgroundImage = `url(${imgList[i]})`;
+                });
+
+                slides[currentIndex].classList.add('active');
+
+                button.addEventListener('click', () => {
+                    window.location.href = link;
+                });
+
+                setInterval(() => {
+                    slides[currentIndex].classList.remove('active');
+                    slides[nextIndex].classList.add('active');
+                    currentIndex = nextIndex;
+                    nextIndex = (nextIndex + 1) % slides.length;
+                }, 3000);
+            }
+
+            setupSlideShow('btn-osaka', images.osaka, urls.osaka);
+            setupSlideShow('btn-tokyo', images.tokyo, urls.tokyo);
+            setupSlideShow('btn-okinawa', images.okinawa, urls.okinawa);
+        </script>
+
+
+
+
+
+
+
+
+        <div id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>Connect via Instagram, or send an email.</p>
+            <a href="mailto:info@yourbrand.com" class="contact-button">Email Us</a>
+            <a href="https://www.instagram.com/yourbrand" class="contact-button">Instagram</a>
+        </div>
+
     </main>
 </body>
 
