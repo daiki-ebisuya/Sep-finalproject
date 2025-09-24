@@ -1,8 +1,14 @@
-
 :root {
-  --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* 東京っぽい夜景風 */
+  --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  /* 東京っぽい夜景風 */
   --accent: #2598cd;
   --font-color: #333;
+  --japanfont-family: 'Kaushan Script', cursive;
+  --accent-color: #e77c5c;
+}
+
+main{
+  padding-top: 5rem;
 }
 
 body {
@@ -16,16 +22,21 @@ body {
 /* ヘッダー修正 */
 header {
   padding: 2rem 1rem;
-  background: #fff; /* 背景は白 */
-  color: #000;      /* 文字は黒で固定 */
+  background: #fff;
+  /* 背景は白 */
+  color: #000;
+  /* 文字は黒で固定 */
   font-weight: 700;
 }
 
 header a,
 header h1,
 header nav {
-  color: #000 !important; /* ネオン効果などを無効化 */
+  color: #000 !important;
+  /* ネオン効果などを無効化 */
 }
+
+
 
 /* ギャラリー */
 .gallery {
@@ -39,7 +50,7 @@ header nav {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -47,7 +58,7 @@ header nav {
 
 .gallery img:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 /* フォーム全体 */
@@ -61,10 +72,11 @@ header nav {
 .booking form {
   max-width: 600px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.8); /* 夜景っぽく半透明黒 */
+  background: rgba(0, 0, 0, 0.8);
+  /* 夜景っぽく半透明黒 */
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -117,12 +129,14 @@ header nav {
 .booking button:hover {
   background-color: #c71c2c;
 }
+
 /* ギャラリーのレスポンシブ設定 */
 .gallery {
   display: grid;
   gap: 15px;
   padding: 20px;
-  grid-template-columns: repeat(3, 1fr); /* デフォルト3列 */
+  grid-template-columns: repeat(3, 1fr);
+  /* デフォルト3列 */
 }
 
 .back-button {
@@ -146,32 +160,61 @@ header nav {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 600px以下は2列 */
+    grid-template-columns: repeat(2, 1fr);
+    /* 600px以下は2列 */
   }
 
-h1 {
+  h1 {
     font-size: 1.8rem;
+  }
+
+  h2 {
+    display: inline-block;
+    font-family: var(--japanfont-family);
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 30px;
+    padding: 20px 20px;
+    /* PCは大きめ、スマホは自動調整 */
+    
   }
 
 }
 
 /* 画像の枠を保ちつつフル表示 */
+
+
+@media (min-width: 901px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    /* 600px以下は2列 */
+  }
+
+
 .gallery img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* 枠いっぱいに収める */
-  aspect-ratio: 1 / 1; /* 正方形の枠を保つ */
+  object-fit: cover;
+  /* 枠いっぱいに収める */
+  aspect-ratio: 1 / 1;
+  /* 正方形の枠を保つ */
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
 }
 
-@media (min-width: 601px) {
- .gallery {
-    grid-template-columns: repeat(3, 1fr) ; /* 600px以下は2列 */
-  }
 
+  h2 {
+    display: inline-block;
+    font-family: var(--japanfont-family);
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 10rem;
+    /* PCは大きめ、スマホは自動調整 */
+    margin-top: 10rem;
+    padding: 20px 20px;
+  }
 }

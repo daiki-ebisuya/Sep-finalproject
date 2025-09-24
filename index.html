@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sightseeing</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./main.css">
     <script>
         // Toggle mobile menu
         const toggleMenu = () => {
@@ -23,8 +23,8 @@
         <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
             <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <a href="#" class="flex items-center">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" 
-                    loading="lazy"/>
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"
+                        loading="lazy">
                     <span class="self-center text-xl font-semibold whitespace-nowrap">Ebisujap.Com</span>
                 </a>
                 <div class="hidden items-center lg:pl-[15rem]  lg:flex lg:w-auto lg:order-1 " id="mobileMenu">
@@ -71,13 +71,16 @@
 
         </section>
         <div class="description">
-            <h3 class="text-[2rem] text-center">Enjoy your trip with us!</h3>
-            <article >Japan offers unique charms in every region.
-                Experience the vibrant food culture and humor of Osaka, the perfect blend of tradition and
-                cutting-edge trends in Tokyo, and the breathtaking beaches and rich nature of Okinawa.
-                Each destination offers unforgettable experiences you can only find there.</article>
+
+            <article>
+                <h3 class="text-[2rem] text-center">Enjoy your trip with us!</h3>
+                <h2><strong>👉Japan offers unique charms in 3 regions.</strong></h2><br>
+                <em>Experience</em>
+                <p>the vibrant food culture and humor of Osaka, the perfect blend of tradition and
+                    cutting-edge trends in Tokyo, and the breathtaking beaches and rich nature of Okinawa.
+                    Each destination offers unforgettable experiences you can only find there.</p>
+            </article>
             <span class="p-2"></span>
-            <h4>.....Where will your next journey begin?.....</h4>
             <div>
 
                 <section class="point-of-interest">
@@ -87,7 +90,7 @@
             </div>
         </div>
         <section class="details">
-
+            <h2>.....Where will your next journey begin?.....</h2>
             <button id="btn-okinawa" class="slide-button">
                 <span class="bg-slide"></span>
                 <span class="bg-slide"></span>
@@ -167,6 +170,71 @@
 
 
 
+        <!-- FAQセクション -->
+        <section id="faq" class="max-w-2xl mx-auto my-12 bg-white shadow-lg rounded-xl p-6">
+            <h2 class="text-2xl font-bold text-center mb-6 text-blue-700">FAQ</h2>
+
+            <div class="space-y-4">
+
+                <!-- Q1 -->
+                <div class="border rounded-lg">
+                    <button
+                        class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-700 hover:bg-blue-50 accordion-btn">
+                        What is the most popular tourist spot in Tokyo?
+                        <span class="text-blue-600">＋</span>
+                    </button>
+                    <div class="accordion-content hidden px-4 pb-4 text-gray-600">
+                        Tokyo Skytree, Senso-ji Temple, and the Shibuya Scramble Crossing are especially popular.
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="border rounded-lg">
+                    <button
+                        class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-700 hover:bg-blue-50 accordion-btn">
+                        When is the best season to visit Japan?
+                        <span class="text-blue-600">＋</span>
+                    </button>
+                    <div class="accordion-content hidden px-4 pb-4 text-gray-600">
+                        Spring (cherry blossom season) and autumn (fall foliage season) are highly recommended.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="border rounded-lg">
+                    <button
+                        class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-700 hover:bg-blue-50 accordion-btn">
+                        What are the most convenient transportation options?
+                        <span class="text-blue-600">＋</span>
+                    </button>
+                    <div class="accordion-content hidden px-4 pb-4 text-gray-600">
+                        Traveling by Shinkansen with a JR Pass, as well as subways and buses, is very convenient.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <script>
+            // アコーディオン動作
+            document.querySelectorAll('.accordion-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const isOpen = !content.classList.contains('hidden');
+
+                    // 一旦全部閉じる
+                    document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
+                    document.querySelectorAll('.accordion-btn span').forEach(icon => icon.textContent = '＋');
+
+                    // 今クリックしたものを開く/閉じる
+                    if (!isOpen) {
+                        content.classList.remove('hidden');
+                        button.querySelector('span').textContent = '−';
+                    }
+                });
+            });
+        </script>
 
 
 

@@ -34,7 +34,13 @@ header {
   z-index: 1000;
   /* ヘッダーを最前面に */
 }
+article {
+  padding-top: 5rem;
+}
 
+article>p {
+  font-size: large;
+}
 
 @keyframes skyShift {
   0% {
@@ -99,17 +105,7 @@ header {
   /* はみ出し防止 */
 }
 
-.heading::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 20rem;
-  z-index: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  /* 背景より前、テキストより後ろ */
-}
+
 
 
 
@@ -130,14 +126,7 @@ h1 {
   /* 余計な余白を消す */
 }
 
-h2 {
-  font-family: var(--japanfont-family);
-  font-weight: 700;
-  color: var(--accent-alt);
-  font-size: clamp(2rem, 8vw, 6rem);
-  /* PCは大きめ、スマホは自動調整 */
-  margin: 0;
-}
+
 
 
 
@@ -334,6 +323,16 @@ h2 {
     /* ちょっとグラデーション */
   }
 
+  h2 {
+    font-family: var(--japanfont-family);
+    font-weight: 700;
+    color: var(--accent-alt);
+    font-size: clamp(2rem, 8vw, 7rem);
+    /* PCは大きめ、スマホは自動調整 */
+    margin: 0;
+  }
+
+
   h2,
   h3,
   h4 {
@@ -353,6 +352,18 @@ h2 {
     padding: 10px 20px;
   }
 
+  .heading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20rem;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* 背景より前、テキストより後ろ */
+  }
+
   .description {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -368,7 +379,7 @@ h2 {
     color: #f3e7e7;
     margin: 15px;
     text-align: center;
-    background-image: url(./img/IMG_japan.jpg);
+    background-image: url(./img/IMG_japan.webp);
     background-size: cover;
     background-position: right;
   }
@@ -404,19 +415,22 @@ h2 {
   }
 
 
-  .details>#btn-okinawa {
+  .details> #btn-okinawa {
     position: relative;
-    top: 13rem;
+    top: 21rem;
+    right: 24rem;
   }
 
-  .details>#btn-osaka {
+  .details> #btn-osaka {
     position: relative;
-    top: 1rem;
+    top: 14rem;
+    right: 20rem;
   }
 
-  .details>#btn-tokyo {
+  .details> #btn-tokyo {
     position: relative;
-    top: 5rem;
+    bottom: 3rem;
+    
   }
 
 
@@ -426,8 +440,8 @@ h2 {
     /* ← flexで中央寄せ */
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     border: 2px solid #7a1f1f;
     border-radius: 100px;
     cursor: pointer;
@@ -440,7 +454,7 @@ h2 {
   }
 
   .slide-button:hover {
-    transform: scale(2);
+    transform: scale(4);
     /* ← 拡大率を200% →  */
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
   }
@@ -451,7 +465,7 @@ h2 {
     overflow: visible;
     color: #fff;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.5rem;
     /* サイズ調整 */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     z-index: 2;
@@ -527,6 +541,11 @@ h2 {
     /* ちょっとグラデーション */
   }
 
+
+  h2 {
+    font-size: 7rem;
+  }
+
   h2,
   h3,
   h4 {
@@ -546,6 +565,18 @@ h2 {
     padding: 10px 20px;
   }
 
+  .heading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 11rem;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* 背景より前、テキストより後ろ */
+  }
+
   .description {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -555,15 +586,22 @@ h2 {
   }
 
   .details {
-    height: 500px;
+    height: 700px;
     font-size: 1rem;
     line-height: 1.5;
     color: #f3e7e7;
     margin: 15px;
     text-align: center;
-    background-image: url(./img/IMG_japan.jpg);
+    background-image: url(./img/IMG_japan.webp);
     background-size: cover;
     background-position: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    width: 100vw;
   }
 
 
@@ -587,29 +625,26 @@ h2 {
   }
 
 
-  .details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-  }
+
 
 
   .details>#btn-okinawa {
     position: relative;
-    top: 13rem;
+    top: 20rem;
+    right: 50%;
   }
 
   .details>#btn-osaka {
     position: relative;
-    top: 1rem;
+    top: 11rem;
+    right: 17%;
   }
 
   .details>#btn-tokyo {
     position: relative;
-    top: 5rem;
+    top: 8rem;
+    right: 7%;
+
   }
 
 
@@ -633,23 +668,12 @@ h2 {
   }
 
   .slide-button:hover {
-    transform: scale(1.2);
-    /* ← 拡大率を200% → 1.2倍に修正 */
+    transform: scale(3);
+    /* ← 拡大率を200% → */
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
   }
 
-  .slide-button .text {
-    position: relative;
-    /* absolute ではなく relative に変更 */
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    /* サイズ調整 */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    z-index: 2;
-    /* 背景より前に表示 */
-    pointer-events: none;
-  }
+
 
 
 
@@ -683,7 +707,7 @@ h2 {
     /* 中央寄せ */
     color: #fff;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     z-index: 2;
     /* 背景より前に表示 */
