@@ -1,5 +1,6 @@
+
 :root {
-  --main-bg: #f0f6ff;
+  --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* 東京っぽい夜景風 */
   --accent: #2598cd;
   --font-color: #333;
 }
@@ -12,17 +13,21 @@ body {
   text-align: center;
 }
 
+/* ヘッダー修正 */
 header {
   padding: 2rem 1rem;
-  background: var(--accent);
-  color: white;
+  background: #fff; /* 背景は白 */
+  color: #000;      /* 文字は黒で固定 */
+  font-weight: 700;
 }
 
-h1 {
-  margin: 0.5rem 0;
-  font-size: 2.5rem;
+header a,
+header h1,
+header nav {
+  color: #000 !important; /* ネオン効果などを無効化 */
 }
 
+/* ギャラリー */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -43,9 +48,100 @@ h1 {
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
-/* Responsive Typography */
+/* フォーム全体 */
+.booking {
+  padding: 40px 20px;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+}
+
+.booking form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.8); /* 夜景っぽく半透明黒 */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.booking fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.booking legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.booking label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #fff;
+}
+
+.booking input,
+.booking select,
+.booking textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  background: #fff;
+  color: #000;
+}
+
+.booking button {
+  align-self: center;
+  background-color: #e63946;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking button:hover {
+  background-color: #c71c2c;
+}
+/* ギャラリーのレスポンシブ設定 */
+.gallery {
+  display: grid;
+  gap: 15px;
+  padding: 20px;
+  grid-template-columns: repeat(3, 1fr); /* デフォルト3列 */
+}
+
 @media (max-width: 600px) {
-  h1 {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 600px以下は2列 */
+  }
+
+h1 {
     font-size: 1.8rem;
   }
+
+}
+
+/* 画像の枠を保ちつつフル表示 */
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 枠いっぱいに収める */
+  aspect-ratio: 1 / 1; /* 正方形の枠を保つ */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
