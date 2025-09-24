@@ -526,41 +526,78 @@ h2 {
 @media (min-width: 601px) {
   h1 {
 
-    /* 黄色背景 */
-    color: #fff;
+
+
+    color: hsl(247, 74%, 5%);
     /* 文字色は白 */
     font-family: 'Poppins', sans-serif;
     /* おしゃれなフォント */
-    font-size: 9rem;
+    font-size: 4rem;
     /* 大きめの文字 */
-    font-weight: 900;
+    font-weight: 800;
     /* 太字 */
     text-transform: uppercase;
     /* 大文字に */
     letter-spacing: 2px;
     /* 文字間を広めに */
-    padding: 20px 40px;
+    padding: 10px 40px;
     /* 内側余白 */
     display: inline-block;
     /* 背景を文字サイズに合わせる */
-    border-radius: 10px;
+    border-radius: 100px;
     /* 角丸 */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     /* 立体感 */
 
+    /* ちょっとグラデーション */
   }
 
-  h2 {
-    font-family: 'Kaushan Script', cursive;
-    /* 筆文字風フォント */
+  h2,
+  h3,
+  h4 {
+    font-family: var(--japanfont-family);
 
     font-weight: 900;
     /* 太め */
     color: white;
     /* ベースは赤 */
 
+    display: inline-block;
+    /* 背景を文字サイズに合わせる */
+    border-radius: 30px;
+    /* 角丸 */
+
+
+    padding: 10px 20px;
   }
 
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #f3e7e7;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .details {
+    height: 500px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #f3e7e7;
+    margin: 15px;
+    text-align: center;
+    background-image: url(./img/IMG_japan.jpg);
+    background-size: cover;
+    background-position: right;
+  }
+
+
+  nav a {
+    position: relative;
+
+  }
+
+  /* 背景画像用のdiv */
   nav a .bg-slide {
     position: absolute;
     top: 0;
@@ -574,34 +611,69 @@ h2 {
     z-index: -1;
   }
 
-  /* アクティブな背景画像表示 */
-  nav a .bg-slide.active {
-    opacity: 1;
+
+  .details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 40px 20px;
+    flex-wrap: wrap;
   }
+
+
+.details > #btn-okinawa {
+  position: relative;
+  top: 13rem;
+}
+
+.details > #btn-osaka {
+  position: relative;
+  top: 1rem;
+}
+
+.details > #btn-tokyo {
+  position: relative;
+  top: 5rem;
+}
+
 
   .slide-button {
+  position: relative;
+  display: inline-flex;  /* ← flexで中央寄せ */
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #7a1f1f;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #3b2e2e;
+  box-shadow: 0 0 10px rgba(122, 31, 31, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1);
+  font-family: var(--japanfont-family);
+}
 
-    position: relative;
-    display: inline-block;
-    width: 400px;
-    height: 200px;
-    border: 2px solid #2598cd;
-    /* 深い赤の枠 */
-    border-radius: 100px;
-    cursor: pointer;
-    overflow: hidden;
-    color: #f5f0e6;
-    /* 生成り色 */
-    font-size: 1.4rem;
-    text-align: center;
-    line-height: 100px;
-    background-color: #3b2e2e;
-    /* 暗い藍色に近い色 */
-    box-shadow: 0 0 10px rgba(122, 31, 31, 0.5);
-    transition: box-shadow 0.3s ease;
-  }
+.slide-button:hover {
+  transform: scale(1.2); /* ← 拡大率を200% → 1.2倍に修正 */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+.slide-button .text {
+  position: relative;   /* absolute ではなく relative に変更 */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;      /* サイズ調整 */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  z-index: 2;           /* 背景より前に表示 */
+  pointer-events: none;
+}
 
 
+
+  
 
   .slide-button .bg-slide {
     position: absolute;
@@ -612,22 +684,45 @@ h2 {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-    z-index: 0;
-    filter: brightness(0.7);
+    transition: opacity 1s ease-in;
+
   }
 
   .slide-button .bg-slide.active {
     opacity: 1;
-    z-index: 1;
   }
 
-  .slide-button .text {
-    position: relative;
-    z-index: 2;
-    pointer-events: none;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+ .slide-button .text {
+  position: absolute;   /* ← relativeからabsoluteに変更 */
+  bottom: 10px;         /* ボタン下からの距離 */
+  left: 50%;            /* 横位置の中央 */
+  transform: translateX(-50%); /* 中央寄せ */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  z-index: 2;           /* 背景より前に表示 */
+  pointer-events: none; /* ← クリックを邪魔しないように */
+}
+
+
+
+
+  /* :not() を使って特定要素を除外 */
+  .gallery img:not([alt="decorative"]) {
+    outline: 2px solid #fff;
   }
 
+
+
+
+
+  .point-of-interest h5 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFD700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
 
 }
