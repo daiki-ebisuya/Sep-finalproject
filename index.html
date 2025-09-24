@@ -46,7 +46,7 @@
                 <div class="flex items-center lg:order-2">
                     <button data-collapse-toggle="mobileMenu" type="button"
                         class="inline-flex p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                        aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
+                        aria-controls="mobilemenu" aria-expanded="false" onclick="toggleMenu()">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -61,10 +61,11 @@
 
     </header>
     <main>
+
         <section class="intro">
             <div class="heading">
-                <h1>Special Travel Campaign</h1>
-                <h2 class="text-[10rem]">in J<a>a</a>pan</h2>
+                <h1 class="special-banner">Special Travel Campaign</h1>
+                <h2 class="special-banner text-[10rem]">in J<span class="red">a</span>pan</h2>
             </div>
 
         </section>
@@ -76,29 +77,38 @@
                 Each destination offers unforgettable experiences you can only find there.</article>
             <span class="p-2"></span>
             <h4>.....Where will your next journey begin?.....</h4>
+            <div>
 
+                <section class="point-of-interest">
+                    <h5>Round-trip flights now on sale for just $800! SHOW GALLERY↓</h5>
+                    <img src="img/IMG_0356.PNG" alt="Main Visual" class="box" />
+                </section>
+            </div>
         </div>
         <section class="details">
+
+            <button id="btn-okinawa" class="slide-button">
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="bg-slide"></span>
+                <span class="text">OKINAWA</span>
+            </button>
+
             <button id="btn-osaka" class="slide-button">
                 <span class="bg-slide"></span>
                 <span class="bg-slide"></span>
                 <span class="bg-slide"></span>
-                <span class="text">大阪</span>
+                <span class="text">OSAKA</span>
             </button>
 
             <button id="btn-tokyo" class="slide-button">
                 <span class="bg-slide"></span>
                 <span class="bg-slide"></span>
                 <span class="bg-slide"></span>
-                <span class="text">東京</span>
+                <span class="text">TOKYO</span>
             </button>
 
-            <button id="btn-okinawa" class="slide-button">
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="text">沖縄</span>
-            </button>
+
         </section>
         <script>
             const images = {
@@ -120,9 +130,9 @@
             };
 
             const urls = {
-                osaka: 'file:///Users/ebisuyadaiki/Desktop/Sep%20final/Sep-finalproject/osaka.html',
-                tokyo: 'file:///Users/ebisuyadaiki/Desktop/Sep%20final/Sep-finalproject/tokyo.html',
-                okinawa: 'file:///Users/ebisuyadaiki/Desktop/Sep%20final/Sep-finalproject/okinawa.html'
+                osaka: './osaka.html',
+                tokyo: './tokyo.html',
+                okinawa: './okinawa.html'
             };
 
             function setupSlideShow(buttonId, imgList, link) {
@@ -162,7 +172,7 @@
 
 
         <div id="contact" class="contact">
-            <h2>Contact</h2>
+            <h6>Contact</h6>
             <p>Connect via Instagram, or send an email.</p>
             <a href="mailto:info@yourbrand.com" class="contact-button">Email Us</a>
             <a href="https://www.instagram.com/yourbrand" class="contact-button">Instagram</a>
