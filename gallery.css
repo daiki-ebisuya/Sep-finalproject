@@ -7,7 +7,7 @@
   --accent-color: #e77c5c;
 }
 
-main{
+main {
   padding-top: 5rem;
 }
 
@@ -32,10 +32,64 @@ header {
 header a,
 header h1,
 header nav {
-  color: #000 !important;
+  color: #f4f2f2 !important;
   /* ネオン効果などを無効化 */
 }
 
+.title-wrapper h1 {
+  background: linear-gradient(135deg, #c94b4b, #4b134f);
+  color: white;
+  width: 100%;
+  font-family: var(--japanfont-family);
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 50px;
+  border-radius: 10px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin: 0 auto;
+  z-index: 1;
+  /* 飛行機が上に来るように */
+}
+
+
+/* タイトルラッパーを相対位置にする */
+.title-wrapper {
+  position: relative;
+  
+  /* h1に合わせてサイズを縮める */
+}
+
+
+
+/* 飛行機イメージ */
+.plane {
+  position: absolute;
+  top: -20px;
+  /* h1の少し上 */
+  left: -100px;
+  /* 画面外から開始 */
+  width: 80px;
+  height: auto;
+  animation: flyAcross 6s linear infinite;
+  z-index: 2;
+  /* 文字の上を飛ぶ */
+}
+
+/* 飛行機のアニメーション */
+@keyframes flyAcross {
+  from {
+    transform: translateX();
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(1000px);
+    /* 横移動 */
+    opacity: 1;
+  }
+}
 
 
 /* ギャラリー */
@@ -178,7 +232,7 @@ header nav {
     font-size: 30px;
     padding: 20px 20px;
     /* PCは大きめ、スマホは自動調整 */
-    
+
   }
 
 }
@@ -193,18 +247,18 @@ header nav {
   }
 
 
-.gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* 枠いっぱいに収める */
-  aspect-ratio: 1 / 1;
-  /* 正方形の枠を保つ */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 枠いっぱいに収める */
+    aspect-ratio: 1 / 1;
+    /* 正方形の枠を保つ */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-}
+  }
 
 
   h2 {

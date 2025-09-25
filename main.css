@@ -218,6 +218,27 @@ h4 {
 }
 
 
+.plane {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  top: 0;
+  left: 0;
+  offset-path: path("M 100 600 L 350 400 L 650 250"); /* ★ 飛行ルート */
+  offset-rotate: auto; /* 進行方向を向く */
+  animation: fly 12s ease-in-out infinite;
+}
+
+/* アニメーション */
+@keyframes fly {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
 
 
 .red {
@@ -235,22 +256,24 @@ h4 {
 
 /* details */
 .details {
-  display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.details>#btn-okinawa,
-.details>#btn-osaka,
-.details>#btn-tokyo {
-  position: absolute;
-}
-
 .map-container {
+  position: relative; /* ★ ボタン配置の基準 */
   width: 90%;
   max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(122, 31, 31, 0.5);
+}
+
+.details h2{
+  position: relative;
+  box-shadow: 0 0 10px rgba(122, 31, 31, 0.5);
 }
 
 .map-img {
@@ -258,6 +281,57 @@ h4 {
   height: auto;
   display: block;
 }
+
+/* ==== ボタンデザイン（元のまま反映） ==== */
+.slide-button {
+  position: absolute;   /* ★ 地図の上に置く */
+  z-index: 10;          /* 地図より前に */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border: 2px solid #7a1f1f;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #3b2e2e;
+  box-shadow: 0 0 10px rgba(122, 31, 31, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--japanfont-family);
+}
+
+.slide-button:hover {
+  transform: scale(1.8);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+.slide-button .text {
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.6rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ==== 各ボタンの位置（例） ==== */
+#btn-tokyo {
+  top: 65%;
+  left: 58%;
+}
+
+#btn-osaka {
+  top: 67%;
+  left: 42%;
+}
+
+#btn-okinawa {
+  top: 90%;
+  left: 5%;
+}
+
 
 /* point-of-interest */
 .point-of-interest h5 {
@@ -442,13 +516,13 @@ h4 {
   }
 
   .slide-button {
-    position: relative;
+    position: absolute;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #7a1f1f;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #cdfaf9;
     border-radius: 100px;
     cursor: pointer;
     overflow: hidden;
