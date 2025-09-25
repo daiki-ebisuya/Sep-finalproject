@@ -1,0 +1,51 @@
+:root {
+  --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  /* 東京っぽい夜景風 */
+  --accent: #2598cd;
+  --font-color: #333;
+  --japanfont-family: 'Kaushan Script', cursive;
+  --accent-color: #e77c5c;
+}
+
+main{
+  padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--main-bg);
+  color: var(--font-color);
+  text-align: center;
+}
+
+/* ヘッダー修正 */
+header {
+  padding: 2rem 1rem;
+  background: #fff;
+  /* 背景は白 */
+  color: #000;
+  /* 文字は黒で固定 */
+  font-weight: 700;
+}
+
+header a,
+header h1,
+header nav {
+  color: #000 !important;
+  /* ネオン効果などを無効化 */
+}
+.back-button {
+  position: fixed;
+  top: 10rem;
+  left: 20px;
+  background: rgba(236, 220, 220, 0.7);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 9999;
+  transition: background 0.3s ease, transform 0.2s ease;
+}

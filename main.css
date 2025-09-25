@@ -32,8 +32,8 @@ main {
 header {
   position: relative;
   z-index: 1000;
-  /* ヘッダーを最前面に */
 }
+
 article {
   padding-top: 5rem;
 }
@@ -47,22 +47,18 @@ article>p {
     background-position: 0% 50%;
   }
 
-  /* 朝 */
   25% {
     background-position: 50% 50%;
   }
 
-  /* 昼 */
   50% {
     background-position: 100% 50%;
   }
 
-  /* 夕方 */
   75% {
     background-position: 50% 100%;
   }
 
-  /* 夜 */
   100% {
     background-position: 0% 50%;
   }
@@ -96,26 +92,18 @@ article>p {
   border-top: 4rem solid var(--accent-color);
   border-bottom: 4rem solid var(--accent-color);
   aspect-ratio: 16 / 9;
-  /* PCと同じ比率に固定 */
   display: flex;
-  /* 子要素を中央寄せ */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* はみ出し防止 */
 }
 
-
-
-
-
+/* h1 */
 h1 {
   background: linear-gradient(135deg, #c94b4b, #4b134f);
-  /* 和の朱×藍 */
   color: var(--hover-color);
   font-family: 'Poppins', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  /* スマホで自動縮小 */
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -123,9 +111,111 @@ h1 {
   border-radius: 10px;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   margin: 0;
-  /* 余計な余白を消す */
 }
 
+/* ===== トップ用 h2（特大サイズ in Japan） ===== */
+.heading h2 {
+  font-family: var(--japanfont-family);
+  font-weight: 700;
+  color: var(--font-color);
+  font-size: clamp(3rem, 12vw, 12rem);
+  margin: 0;
+}
+
+/* ===== 記事・セクション内の h2（中サイズ） ===== */
+article h2,
+.details h2,
+#faq h2 {
+  font-family: var(--japanfont-family);
+  font-weight: 700;
+  color: var(--font-color);
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  margin: 1rem 0;
+}
+
+
+
+em {
+  display: block;
+  font-family: var(--japanfont-family);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(255, 255, 255, 0.9);
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif; /* ← 元のベースフォントに戻した */
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #ffffff;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  text-shadow:
+    0 0 8px rgba(0, 0, 0, 0.7),
+    0 0 18px rgba(255, 255, 255, 0.8);
+
+  animation: float 7s ease-in-out infinite;
+}
+
+strong {
+  color: var(--sub-color);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+
+
+/* h3 専用フォント */
+h3 {
+  font-family: var(--japanfont-family);
+  font-weight: 900;
+}
+
+/* h4 専用フォント */
+h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 共通デザイン（浮遊感） */
+h3,
+h4 {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-shadow:
+    0 0 8px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.8);
+  background: transparent;
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
 
 
 
@@ -133,8 +223,6 @@ h1 {
 .red {
   color: var(--accent-color);
 }
-
-
 
 /* description */
 .description {
@@ -146,24 +234,30 @@ h1 {
 }
 
 /* details */
-
 .details {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 40px 20px;
-  background-color: var(--background-color);
-  background-image: url(./img/IMG_japan.jpg);
-  background-size: cover;
-  /* 要素を埋める */
-  background-position: center;
-  /* 中央を基準 */
-  background-repeat: no-repeat;
-  /* 繰り返さない */
 }
 
+.details>#btn-okinawa,
+.details>#btn-osaka,
+.details>#btn-tokyo {
+  position: absolute;
+}
+
+.map-container {
+  width: 90%;
+  max-width: 800px;
+}
+
+.map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* point-of-interest */
 .point-of-interest h5 {
@@ -173,8 +267,6 @@ h1 {
   border-radius: 8px;
   text-align: center;
 }
-
-
 
 /* contact */
 .contact {
@@ -204,7 +296,7 @@ h1 {
   background-color: var(--accent-color);
 }
 
-
+/* ===== plane animation ===== */
 @keyframes planeFlightSmooth {
   0% {
     transform: translateX(-200px) translateY(0) rotate(-10deg) scale(0.9);
@@ -243,7 +335,6 @@ h1 {
   height: auto;
   position: absolute;
   top: 120px;
-  /* 高度（初期位置） */
   left: 0;
   animation: planeFlightSmooth 12s ease-in-out infinite;
   animation-fill-mode: forwards;
@@ -284,72 +375,24 @@ h1 {
   }
 }
 
-
-
-
+/* ===== responsive tweaks ===== */
 @media (max-width: 600px) {
-
   #mobilemenu {
     display: block;
     width: 100%;
-
   }
 
   h1 {
-
-
-
     color: hsl(247, 74%, 5%);
-    /* 文字色は白 */
     font-family: 'Poppins', sans-serif;
-    /* おしゃれなフォント */
     font-size: 4rem;
-    /* 大きめの文字 */
     font-weight: 800;
-    /* 太字 */
     text-transform: uppercase;
-    /* 大文字に */
     letter-spacing: 2px;
-    /* 文字間を広めに */
     padding: 10px 40px;
-    /* 内側余白 */
     display: inline-block;
-    /* 背景を文字サイズに合わせる */
     border-radius: 100px;
-    /* 角丸 */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    /* 立体感 */
-
-    /* ちょっとグラデーション */
-  }
-
-  h2 {
-    font-family: var(--japanfont-family);
-    font-weight: 700;
-    color: var(--accent-alt);
-    font-size: clamp(2rem, 8vw, 7rem);
-    /* PCは大きめ、スマホは自動調整 */
-    margin: 0;
-  }
-
-
-  h2,
-  h3,
-  h4 {
-    font-family: var(--japanfont-family);
-
-    font-weight: 900;
-    /* 太め */
-    color: white;
-    /* ベースは赤 */
-
-    display: inline-block;
-    /* 背景を文字サイズに合わせる */
-    border-radius: 30px;
-    /* 角丸 */
-
-
-    padding: 10px 20px;
   }
 
   .heading::before {
@@ -361,7 +404,6 @@ h1 {
     bottom: 20rem;
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    /* 背景より前、テキストより後ろ */
   }
 
   .description {
@@ -379,18 +421,13 @@ h1 {
     color: #f3e7e7;
     margin: 15px;
     text-align: center;
-    background-image: url(./img/IMG_japan.webp);
-    background-size: cover;
-    background-position: right;
+    background-position: center;
   }
-
 
   nav a {
     position: relative;
-
   }
 
-  /* 背景画像用のdiv */
   nav a .bg-slide {
     position: absolute;
     top: 0;
@@ -404,40 +441,9 @@ h1 {
     z-index: -1;
   }
 
-
-  .details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-  }
-
-
-  .details> #btn-okinawa {
-    position: relative;
-    top: 21rem;
-    right: 24rem;
-  }
-
-  .details> #btn-osaka {
-    position: relative;
-    top: 14rem;
-    right: 20rem;
-  }
-
-  .details> #btn-tokyo {
-    position: relative;
-    bottom: 3rem;
-    
-  }
-
-
   .slide-button {
     position: relative;
     display: inline-flex;
-    /* ← flexで中央寄せ */
     justify-content: center;
     align-items: center;
     width: 40px;
@@ -455,27 +461,19 @@ h1 {
 
   .slide-button:hover {
     transform: scale(4);
-    /* ← 拡大率を200% →  */
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
   }
 
   .slide-button .text {
     position: relative;
-    /* absolute ではなく relative に変更 */
     overflow: visible;
     color: #fff;
     font-weight: bold;
     font-size: 0.5rem;
-    /* サイズ調整 */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     z-index: 2;
-    /* 背景より前に表示 */
     pointer-events: none;
   }
-
-
-
-
 
   .slide-button .bg-slide {
     position: absolute;
@@ -487,19 +485,15 @@ h1 {
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in;
-
   }
 
   .slide-button .bg-slide.active {
     opacity: 1;
   }
 
-
-  /* :not() を使って特定要素を除外 */
   .gallery img:not([alt="decorative"]) {
     outline: 2px solid #fff;
   }
-
 
   .point-of-interest h5 {
     background-color: rgba(0, 0, 0, 0.5);
@@ -508,62 +502,28 @@ h1 {
     border-radius: 8px;
     text-align: center;
   }
-
-
 }
 
 @media (min-width: 601px) {
   h1 {
-
-
-
     color: hsl(247, 74%, 5%);
-    /* 文字色は白 */
     font-family: 'Poppins', sans-serif;
-    /* おしゃれなフォント */
     font-size: 4rem;
-    /* 大きめの文字 */
     font-weight: 800;
-    /* 太字 */
     text-transform: uppercase;
-    /* 大文字に */
     letter-spacing: 2px;
-    /* 文字間を広めに */
     padding: 10px 40px;
-    /* 内側余白 */
     display: inline-block;
-    /* 背景を文字サイズに合わせる */
     border-radius: 100px;
-    /* 角丸 */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    /* 立体感 */
-
-    /* ちょっとグラデーション */
   }
 
 
-  h2 {
-    font-size: 7rem;
-  }
-
-  h2,
-  h3,
-  h4 {
-    font-family: var(--japanfont-family);
-
-    font-weight: 900;
-    /* 太め */
-    color: white;
-    /* ベースは赤 */
-
-    display: inline-block;
-    /* 背景を文字サイズに合わせる */
-    border-radius: 30px;
-    /* 角丸 */
 
 
-    padding: 10px 20px;
-  }
+
+
+
 
   .heading::before {
     content: "";
@@ -574,7 +534,6 @@ h1 {
     bottom: 11rem;
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    /* 背景より前、テキストより後ろ */
   }
 
   .description {
@@ -592,25 +551,19 @@ h1 {
     color: #f3e7e7;
     margin: 15px;
     text-align: center;
-    background-image: url(./img/IMG_japan.webp);
-    background-size: cover;
-    background-position: right;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 40px 20px;
     flex-wrap: wrap;
     width: 100vw;
   }
 
-
   nav a {
     position: relative;
-
   }
 
-  /* 背景画像用のdiv */
   nav a .bg-slide {
     position: absolute;
     top: 0;
@@ -624,34 +577,9 @@ h1 {
     z-index: -1;
   }
 
-
-
-
-
-  .details>#btn-okinawa {
-    position: relative;
-    top: 20rem;
-    right: 50%;
-  }
-
-  .details>#btn-osaka {
-    position: relative;
-    top: 11rem;
-    right: 17%;
-  }
-
-  .details>#btn-tokyo {
-    position: relative;
-    top: 8rem;
-    right: 7%;
-
-  }
-
-
   .slide-button {
-    position: relative;
+    position: absolute;
     display: inline-flex;
-    /* ← flexで中央寄せ */
     justify-content: center;
     align-items: center;
     width: 50px;
@@ -669,15 +597,8 @@ h1 {
 
   .slide-button:hover {
     transform: scale(3);
-    /* ← 拡大率を200% → */
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
   }
-
-
-
-
-
-
 
   .slide-button .bg-slide {
     position: absolute;
@@ -689,7 +610,6 @@ h1 {
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in;
-
   }
 
   .slide-button .bg-slide.active {
@@ -698,34 +618,20 @@ h1 {
 
   .slide-button .text {
     position: absolute;
-    /* ← relativeからabsoluteに変更 */
     bottom: 10px;
-    /* ボタン下からの距離 */
     left: 50%;
-    /* 横位置の中央 */
     transform: translateX(-50%);
-    /* 中央寄せ */
     color: #fff;
     font-weight: bold;
     font-size: 0.7rem;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     z-index: 2;
-    /* 背景より前に表示 */
     pointer-events: none;
-    /* ← クリックを邪魔しないように */
   }
 
-
-
-
-  /* :not() を使って特定要素を除外 */
   .gallery img:not([alt="decorative"]) {
     outline: 2px solid #fff;
   }
-
-
-
-
 
   .point-of-interest h5 {
     background-color: rgba(0, 0, 0, 0.5);
@@ -734,5 +640,4 @@ h1 {
     border-radius: 8px;
     text-align: center;
   }
-
 }

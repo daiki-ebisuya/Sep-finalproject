@@ -38,9 +38,9 @@
                                 class="block py-2 pr-4 pl-3 text-blue-700 rounded lg:bg-transparent lg:text-blue-700 lg:p-0">contact</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="block py-2 pr-4 pl-3 text-blue-700 rounded lg:bg-transparent lg:text-blue-700 lg:p-0">about
-                                us</a>
+                            <a href="faq.html"
+                                class="block py-2 pr-4 pl-3 text-blue-700 rounded lg:bg-transparent lg:text-blue-700 lg:p-0">
+                                FAQ</a>
                         </li>
                     </ul>
                 </div>
@@ -73,44 +73,56 @@
         <div class="description">
 
             <article>
-                <h3 class="text-[2rem] text-center">Enjoy your trip with us!</h3>
-                <h2><strong>👉Japan offers unique charms in 3 regions.</strong></h2><br>
+                <h2>Enjoy your trip with us!</h2>
+                <h3>✨ Experience Japan’s Top 3 Destinations in One Trip! ✨</h3><br>
                 <em>Experience</em>
-                <p>the vibrant food culture and humor of Osaka, the perfect blend of tradition and
-                    cutting-edge trends in Tokyo, and the breathtaking beaches and rich nature of Okinawa.
-                    Each destination offers unforgettable experiences you can only find there.</p>
+                <h4>Discover the perfect blend of tradition and innovation in <strong>Tokyo</strong>, indulge in the
+                    vibrant food culture and humor of <strong>Osaka</strong>, and relax on the stunning beaches
+                    surrounded by the rich nature of <strong>Okinawa</strong>.
+                    Now you can enjoy all three destinations in one unforgettable journey.</h4>
             </article>
             <span class="p-2"></span>
             <div>
 
                 <section class="point-of-interest">
-                    <h5>Round-trip flights now on sale for just $800! SHOW GALLERY↓</h5>
-                    <img src="img/IMG_0356.PNG" alt="Main Visual" class="box" />
+                    <h5>🌏 Round-trip flights to Tokyo, Osaka, and Okinawa for just $800! <br>
+                        👉 Scroll down and choose your journey below to begin your adventure.</h5>
+                        <div class=""><img src="./img/Subject 午前2.50.20.png" alt=""><img src="img/IMG_0356.PNG" alt="Main Visual" class="box" /></div>
+                    
                 </section>
             </div>
         </div>
         <section class="details">
-            <h2>.....Where will your next journey begin?.....</h2>
-            <button id="btn-okinawa" class="slide-button">
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="text">OKINAWA</span>
-            </button>
+            <div class="map-container">
 
-            <button id="btn-osaka" class="slide-button">
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="text">OSAKA</span>
-            </button>
 
-            <button id="btn-tokyo" class="slide-button">
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="bg-slide"></span>
-                <span class="text">TOKYO</span>
-            </button>
+                <h2>.....Where will your next journey begin?</h2>
+                <div>
+                    <button id="btn-okinawa" class="slide-button">
+                        <span class="bg-slide"></span>
+                        <span class="bg-slide"></span>
+                        <span class="bg-slide"></span>
+                        <span class="text">OKINAWA</span>
+                    </button>
+
+                    <button id="btn-osaka" class="slide-button">
+                        <span class="bg-slide"></span>
+                        <span class="bg-slide"></span>
+                        <span class="bg-slide"></span>
+                        <span class="text">OSAKA</span>
+                    </button>
+
+                    <button id="btn-tokyo" class="slide-button">
+                        <span class="bg-slide"></span>
+                        <span class="bg-slide"></span>
+                        <span class="bg-slide"></span>
+                        <span class="text">TOKYO</span>
+                    </button>
+
+                    <img src="./img/IMG_japan.webp" alt="日本地図" class="map-img">
+                </div>
+            </div>
+
 
 
         </section>
@@ -134,9 +146,9 @@
             };
 
             const urls = {
-                osaka: './osaka.html',
-                tokyo: './tokyo.html',
-                okinawa: './okinawa.html'
+                osaka: 'notfound.html',
+                tokyo: 'tokyo.html',
+                okinawa: './notfound.html'
             };
 
             function setupSlideShow(buttonId, imgList, link) {
@@ -167,78 +179,6 @@
             setupSlideShow('btn-tokyo', images.tokyo, urls.tokyo);
             setupSlideShow('btn-okinawa', images.okinawa, urls.okinawa);
         </script>
-
-
-
-        <!-- FAQセクション -->
-        <section id="faq" class="max-w-2xl mx-auto my-12 bg-white shadow-lg rounded-xl p-6">
-            <h2 class="text-2xl font-bold text-center mb-6 text-blue-700">FAQ</h2>
-
-            <div class="space-y-4">
-
-                <!-- Q1 -->
-                <div class="border rounded-lg">
-                    <button
-                        class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-700 hover:bg-blue-50 accordion-btn">
-                        What is the most popular tourist spot in Tokyo?
-                        <span class="text-blue-600">＋</span>
-                    </button>
-                    <div class="accordion-content hidden px-4 pb-4 text-gray-600">
-                        Tokyo Skytree, Senso-ji Temple, and the Shibuya Scramble Crossing are especially popular.
-                    </div>
-                </div>
-
-                <!-- Q2 -->
-                <div class="border rounded-lg">
-                    <button
-                        class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-700 hover:bg-blue-50 accordion-btn">
-                        When is the best season to visit Japan?
-                        <span class="text-blue-600">＋</span>
-                    </button>
-                    <div class="accordion-content hidden px-4 pb-4 text-gray-600">
-                        Spring (cherry blossom season) and autumn (fall foliage season) are highly recommended.
-                    </div>
-                </div>
-
-                <!-- Q3 -->
-                <div class="border rounded-lg">
-                    <button
-                        class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-700 hover:bg-blue-50 accordion-btn">
-                        What are the most convenient transportation options?
-                        <span class="text-blue-600">＋</span>
-                    </button>
-                    <div class="accordion-content hidden px-4 pb-4 text-gray-600">
-                        Traveling by Shinkansen with a JR Pass, as well as subways and buses, is very convenient.
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <script>
-            // アコーディオン動作
-            document.querySelectorAll('.accordion-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const content = button.nextElementSibling;
-                    const isOpen = !content.classList.contains('hidden');
-
-                    // 一旦全部閉じる
-                    document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
-                    document.querySelectorAll('.accordion-btn span').forEach(icon => icon.textContent = '＋');
-
-                    // 今クリックしたものを開く/閉じる
-                    if (!isOpen) {
-                        content.classList.remove('hidden');
-                        button.querySelector('span').textContent = '−';
-                    }
-                });
-            });
-        </script>
-
-
-
-
 
         <div id="contact" class="contact">
             <h6>Contact</h6>
